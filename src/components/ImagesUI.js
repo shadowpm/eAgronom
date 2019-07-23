@@ -1,9 +1,22 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
-const ImagesUI = () => (
-  <div className="div-width">
-    <h1>images</h1>
-  </div>
-);
+const ImagesUI = (props) => {
+  if (props.is_fetching) {
+    return 'loading...'
+  } else {
+    return (
+      <div className="div-width">
+        <h1>images</h1>
+        <div>{props.cats.map(cat => <img src={cat.url}/>)}</div>
+      </div>
+    )
+  }
+};
 
-export default ImagesUI;
+const mapStateToProps = (state) => ({
+  cats: state.cats.data,
+  is_fetching: state.cats.is_fetching
+});
+
+export default connect(mapStateToProps)(ImagesUI);

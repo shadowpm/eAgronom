@@ -1,15 +1,24 @@
 import React from 'react';
+import {connect} from 'react-redux'
+import Category from './Category';
 
-const CategoriesUI = () => (
-  <div>
-    <ul>
-      <li><a className="active" href="#category1" >category #1</a></li>
-      <li><a href="#category2" >category #2</a></li>
-      <li><a href="#category3" >category #3</a></li>
-      <li><a href="#category4" >category #4</a></li>
-      <li><a href="#category5" >category #5</a></li>
-    </ul>
-  </div>
-);
+const CategoriesUI = (props) => {
+  if (props.is_fetching) {
+    return 'loading...'
+  } else {
+    return (
+      <div>
+        <ul>
+          {props.categories.map(category => <Category data={category} key={category.id}/>)}
+        </ul>
+      </div>
+    )
+  }
+};
 
-export default CategoriesUI;
+const mapStateToProps = (state) => ({
+  categories: state.categories.data,
+  is_fetching: state.categories.is_fetching
+});
+
+export default connect(mapStateToProps)(CategoriesUI);
