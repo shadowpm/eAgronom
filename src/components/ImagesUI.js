@@ -8,7 +8,7 @@ const ImagesUI = (props) => {
     return (
       <div className="div-width">
         <h1>images</h1>
-        <div>{props.cats.map(cat => <img src={cat.url}/>)}</div>
+        <div>{props.cats.map(cat => <img className='image-style' src={cat.url}/>)}</div>
       </div>
     )
   }

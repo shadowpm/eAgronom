@@ -32,3 +32,8 @@ li a:hover:not(.active) {
     margin-right: 35%;
     overflow: auto;
 }
+
+.image-style {
+    width: 200px;
+    margin: 10px;
+}
