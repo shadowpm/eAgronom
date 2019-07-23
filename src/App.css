@@ -30,4 +30,5 @@ li a:hover:not(.active) {
     position: relative;
     left: 30%;
     margin-right: 35%;
+    overflow: auto;
 }
