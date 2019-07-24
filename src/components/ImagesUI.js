@@ -1,17 +1,18 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import LoadButton from './ShowMoreButton'
 
 const ImagesUI = (props) => {
-  if (props.is_fetching) {
-    return 'loading...'
-  } else {
-    return (
+  return (
+    <div>
       <div className="div-width">
-        <h1>images</h1>
+        <h3 className="item-margin">Choose category to see images /ᐠ.ᆽ.ᐟ\</h3>
         <div>{props.cats.map(cat => <img className='image-style' src={cat.url}/>)}</div>
       </div>
-    )
-  }
+      {props.is_fetching && <div className="div-width item-margin">Loading...</div>}
+      <LoadButton/>
+    </div>
+  )
 };
 
 const mapStateToProps = (state) => ({

@@ -37,3 +37,11 @@ li a:hover:not(.active) {
     width: 200px;
     margin: 10px;
 }
+
+.item-margin {
+    margin: 10px;
+}
+
+.btn {
+
+}
