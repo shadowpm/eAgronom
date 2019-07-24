@@ -52,7 +52,7 @@ li a:hover:not(.active) {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background-color: #7b68ee;
+    background-color: #555;
     border: 1px solid transparent;
     padding: .375rem .75rem;
     font-size: 1rem;
