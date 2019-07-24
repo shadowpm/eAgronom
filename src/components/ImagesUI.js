@@ -10,7 +10,7 @@ const ImagesUI = (props) => {
         <div>{props.cats.map(cat => <img className='image-style' src={cat.url}/>)}</div>
       </div>
       {props.is_fetching && <div className="div-width item-margin">Loading...</div>}
-      <LoadButton/>
+      {props.cats.length > 0 && <LoadButton/>}
     </div>
   )
 };
