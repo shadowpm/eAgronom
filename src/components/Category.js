@@ -2,7 +2,7 @@ import React from 'react';
 import {createChangeCategoryIdAction, createResetPageNumber} from "../store/selected/actions/creators";
 import {connect} from 'react-redux';
 import fetchCats from "../store/cats/action/fetchCats";
-import {createCatsResetAction} from "../store/cats/action/creator";
+import {createCatsResetAction} from "../store/cats/action/creators";
 import PropTypes from 'prop-types';
 
 const Category = (props) => {

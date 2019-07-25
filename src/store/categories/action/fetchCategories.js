@@ -1,3 +1,4 @@
+import 'cross-fetch/polyfill'
 import * as creators from './creators'
 
 export default () => async (dispatch) => {

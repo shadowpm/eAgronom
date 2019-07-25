@@ -1,4 +1,4 @@
-import * as creators from './creator';
+import * as creators from './creators';
 
 export default () => async (dispatch, getState) => {
   dispatch(creators.createCatsRequestAction());
