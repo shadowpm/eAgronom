@@ -14,6 +14,12 @@ const Category = (props) => {
   )
 };
 
+Category.propTypes = {
+  data: PropTypes.object.isRequired,
+  onChangeId: PropTypes.func.isRequired,
+  category_id: PropTypes.number.isRequired
+};
+
 const mapStateToProps = (state) => ({
   category_id: state.selected.category_id
 });
@@ -26,10 +32,5 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(fetchCats())
   }
 });
-
-Category.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  className: PropTypes.string.isRequired
-};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Category);

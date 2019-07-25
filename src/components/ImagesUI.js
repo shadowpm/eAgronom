@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import LoadButton from './ShowMoreButton'
+import LoadButton from './ShowMoreButton';
+import PropTypes from 'prop-types';
 
 const ImagesUI = (props) => {
   return (
@@ -13,6 +14,11 @@ const ImagesUI = (props) => {
       {props.cats.length > 0 && <LoadButton/>}
     </div>
   )
+};
+
+ImagesUI.propTypes = {
+  cats: PropTypes.array.isRequired,
+  is_fetching: PropTypes.bool.isRequired
 };
 
 const mapStateToProps = (state) => ({

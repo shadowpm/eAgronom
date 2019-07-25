@@ -18,7 +18,7 @@ const ShowMoreButton = ({dispatch}) => {
 };
 
 ShowMoreButton.propTypes = {
-  onSubmit: PropTypes.func.isRequired
+  dispatch: PropTypes.func.isRequired
 };
 
 export default connect()(ShowMoreButton);
