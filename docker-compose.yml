@@ -1,0 +1,13 @@
+version: '3.2'
+services:
+  eagronom:
+    image: eagronom
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: eagronom-front-end
+    ports:
+    - "3060:3000"
+    volumes:
+    - ./src:/var/app/src
+    - ./public:/var/app/public
