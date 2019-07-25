@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {createIncreasePageNumber} from "../store/selected/actions/creators";
 import fetchCats from "../store/cats/action/fetchCats";
+import PropTypes from 'prop-types';
 
 const ShowMoreButton = ({dispatch}) => {
   const onSubmit = () => {
@@ -16,5 +17,8 @@ const ShowMoreButton = ({dispatch}) => {
   )
 };
 
+ShowMoreButton.propTypes = {
+  onSubmit: PropTypes.func.isRequired
+};
 
 export default connect()(ShowMoreButton);

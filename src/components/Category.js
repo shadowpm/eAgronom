@@ -3,6 +3,7 @@ import {createChangeCategoryIdAction, createResetPageNumber} from "../store/sele
 import {connect} from 'react-redux';
 import fetchCats from "../store/cats/action/fetchCats";
 import {createCatsResetAction} from "../store/cats/action/creator";
+import PropTypes from 'prop-types';
 
 const Category = (props) => {
   const className = props.data.id === props.category_id ? 'active' : null;
@@ -25,5 +26,10 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(fetchCats())
   }
 });
+
+Category.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  className: PropTypes.string.isRequired
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Category);
